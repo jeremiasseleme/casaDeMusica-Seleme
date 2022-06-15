@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.botonCarro{
+  padding: 5px;
+  margin: 2rem;
+  border-radius: 15px;
+  background-color: green;
+  color: white;
+  border: none;
+}
