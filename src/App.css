@@ -45,3 +45,14 @@
   color: white;
   border: none;
 }
+
+.contador{
+  width: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 5px;
+}
