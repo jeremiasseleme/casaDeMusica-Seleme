@@ -1,6 +1,7 @@
 //@ts-check
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
+import "./Nav.css";
 
 export default function Nav() {
     return (
