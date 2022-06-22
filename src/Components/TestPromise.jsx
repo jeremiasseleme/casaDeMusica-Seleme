@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 export default function TestPromise() {
+    const [items, setItems] = useState([])
     const productos = [
         {
             id: "1",
@@ -21,12 +22,14 @@ export default function TestPromise() {
             stock: 20
         },
     ]
+    useEffect(() => {
+        new Promise((res, rej) => {
+            res(productos.filter(producto => producto.stock > 15) )
+        }).then((res) => setItems(res))
+    }, [])
     
-   const array = new Promise((res, rej) => {
-        res(productos.filter(producto => producto.stock > 15) )
-   })
-   array.then((res) => console.log(res))
+    
   return (
-    <div>TestPromise</div>
+    <div>{items.length && items.map(item=> <span>{item.id} / {item.name}</span>)}</div>
   )
 }
