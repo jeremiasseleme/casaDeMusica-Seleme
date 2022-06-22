@@ -18,7 +18,6 @@ function App() {
     <Nav />
     <ItemListContainer greeting="Bienvenido a mi lista de productos" />
     <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
-    <TestPromise/> {/* Solo queria dejarte esto como un ejemplo! */}
   </>
   )
 }

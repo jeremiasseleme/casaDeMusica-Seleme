@@ -8,6 +8,15 @@ export default function ItemListContainer({ greeting }) {
 
   useEffect(() => {
     let instrumentos = [
+      { "id": "1", "price": 46270, "title": "Guitarra Clasica de Estudio C260", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/GUITARRA-NUNEZ-C260.jpg" },
+      { "id": "2", "price": 118270, "title": "Bajo Electrico Yamaha Trbx 305", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BAJO-YAMAHA-5-CUERDAS.jpg" },
+      { "id": "3", "price": 203485, "title": "Bateria Yamaha Stage Custom", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/BATERIA-YAMAHA-STAGE-CUSTOM.jpg" },
+      { "id": "4", "price": 176270, "title": "Guitarra Yamaha Silent Slg200n", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/09/GUITARRA-YAMAHA-SLG200.jpg" },
+      { "id": "5", "price": 27432, "title": "Clarinete Estudio Parquer Custom", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/CLARINETE-PARQUER-1.jpg" },
+      { "id": "6", "price": 63658, "title": "Saxo Alto Heimond 6430L Gold", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/SAXO-HEIMOND-1.jpg" },
+      { "id": "7", "price": 220230, "title": "Saxo Tenor Mystic Parquer PSTM", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/SAXO-TENOR-MISTIQUE-PARQUER.jpg" },
+      { "id": "8", "price": 139630, "title": "Flauta Traversa YFL222 Yamaha", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLAUTA-TRAVERSA-YAMAHA.jpg" },
+      { "id": "9", "price": 11520, "title": "Set de 7 Armonicas Bluseras Swan", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/12/ARMONICA-SWAN-X-7-1.jpg" },
       { "id": "10", "price": 96000, "title": "Fiscornio Contralto Parquer", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/07/FLISCORNIO-PARQUER.jpg" },
       { "id": "11", "price": 2000, "title": "Cajon Peruano Skull ALEYMAR", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2020/10/CAJON-SKULL-PERUANO.jpg" },
       { "id": "12", "price": 101270, "title": "Bateria Completa Mapex Prodigy", "pictureUrl": "https://lacasadelmusico.com.ar/wp-content/uploads/2021/08/BATERIA-MAPEX.jpg" },
@@ -35,9 +44,8 @@ export default function ItemListContainer({ greeting }) {
 
   return (
     <>
-
-      <span className="itemListContainer">{greeting}</span>
-      <ItemList listaProductos={listaProductos}/>
+      {/* <span className="itemListContainer">{greeting}</span> */}
+      <ItemList listaProductos={listaProductos} />
     </>
   )
 }
