@@ -5,7 +5,7 @@ import "./Nav.css";
 
 export default function Nav() {
     return (
-        <nav className="navbar navbar-expand-lg bg-dark">
+        <nav className="navbar navbar-expand-lg bg-dark mb-4">
   <div className="container-fluid">
   <img className="img_logo"
                         src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png"

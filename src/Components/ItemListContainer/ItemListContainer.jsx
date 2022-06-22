@@ -5,6 +5,7 @@ import "./ItemListContainer.css"
 export default function ItemListContainer({ greeting }) {
 
   const [listaProductos, setListaProductos] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let instrumentos = [
@@ -36,6 +37,7 @@ export default function ItemListContainer({ greeting }) {
       }, 2500);
     }).then((res) => {
       setListaProductos(res)
+      setLoading(false)
     })
 
   }, [])
@@ -45,7 +47,7 @@ export default function ItemListContainer({ greeting }) {
   return (
     <>
       {/* <span className="itemListContainer">{greeting}</span> */}
-      <ItemList listaProductos={listaProductos} />
+      {loading ? <img class="loading mt-3" src="https://media0.giphy.com/media/2qRdYsZ3QySKDN5PiE/giphy.gif?cid=790b7611a86763909b59bdee395ad001e067150e46a278a1&rid=giphy.gif&ct=g://c.tenor.com/KEzW7ALwfUAAAAAC/cat-what.gif" alt="Gato loading" /> : <ItemList listaProductos={listaProductos} />}
     </>
   )
 }

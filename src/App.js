@@ -1,7 +1,6 @@
 import ItemCount from './Components/ItemCount/ItemCount';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Nav from './Components/Nav/Nav';
-import TestPromise from './Components/TestPromise';
 
 
 function App() {

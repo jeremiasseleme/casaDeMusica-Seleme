@@ -8,3 +8,10 @@ text-align: center;
 margin: 0 auto;
 width: 300px;
 }
+
+
+.loading{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
