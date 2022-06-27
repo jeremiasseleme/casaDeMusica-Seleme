@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import ItemList from '../ItemList/ItemList';
-import "./ItemListContainer.css"
+import ItemDetail from '../ItemDetail/ItemDetail'
+import { useParams } from "react-router-dom";
 
-export default function ItemListContainer() {
+export default function ItemDetailContainer() {
 
-  const [listaProductos, setListaProductos] = useState([])
-  const [loading, setLoading] = useState(true)
+
+  const [instrumento, setInstrumento] = useState({})
+  let {instrumentoID} = useParams() 
 
   useEffect(() => {
     let instrumentos = [
@@ -32,22 +33,18 @@ export default function ItemListContainer() {
     ]
 
     new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(instrumentos)
-      }, 2000);
-    }).then((res) => {
-      setListaProductos(res)
-      setLoading(false)
-    })
+        resolve(instrumentos.find((instrumento) => instrumento.id === instrumentoID))
+    }).then((res) => setInstrumento(res)
+)
 
-  }, [])
+  }, [instrumentoID])
 
 
 
   return (
     <>
-      {/* <span className="itemListContainer">{greeting}</span> */}
-      {loading ? <img className="loading mt-3" src="https://media0.giphy.com/media/2qRdYsZ3QySKDN5PiE/giphy.gif?cid=790b7611a86763909b59bdee395ad001e067150e46a278a1&rid=giphy.gif&ct=g://c.tenor.com/KEzW7ALwfUAAAAAC/cat-what.gif" alt="Gato loading" /> : <ItemList listaProductos={listaProductos} />}
+    {<ItemDetail instrumento={instrumento} />}
     </>
   )
 }
+

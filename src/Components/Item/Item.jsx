@@ -1,11 +1,9 @@
 import React from 'react'
-import ItemCount from '../ItemCount/ItemCount';
 import "./Item.css";
+import { Link } from "react-router-dom"
 
 export default function Item({id, price, title, pictureUrl}) {
-    function onAdd(valor){
-        alert("Usted agrego " + valor + " " + title + " al carrito de compras!")
-       }
+    
      
     return (
         <div className="cont_productos ">
@@ -14,15 +12,17 @@ export default function Item({id, price, title, pictureUrl}) {
                     alt={title} />
             </div>
             <div className="info">
-                <h2>{title} id:{id}</h2>
-                <p className="infop"></p>
+                <h2>{title}</h2>
+                <p className="infop">id:{id}</p>
             </div>
             <div className="precio">
                 <div className="box_precio">
                     <span className="precio2"><b>Precio: ${price}</b></span>
                 </div>
             </div>
-            <ItemCount stock={5} initial={1} onAdd={onAdd}/>
+            <Link to={`/item/${id}`}>
+            <button className="btnDetalles btn-primary mx-auto">Detalles🔍</button>
+            </Link>
         </div>
     )
 }

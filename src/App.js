@@ -1,22 +1,21 @@
-import ItemCount from './Components/ItemCount/ItemCount';
+//@ts-check
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Nav from './Components/Nav/Nav';
-
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
 
-  let initial = 1
-  let stock = 5
-
-  function onAdd(valor){
-   alert("Usted agrego " + valor +  " producto/s al carrito de compras!")
-  }
-
   return (
   <>
+  <BrowserRouter>
     <Nav />
-    <ItemListContainer greeting="Bienvenido a mi lista de productos" />
-    <ItemCount stock={stock} initial={initial} onAdd={onAdd}/>
+    <Routes>
+    <Route path="/" element={<ItemListContainer />} />
+    <Route path="/category/:idCategory" element={<ItemListContainer />} />
+    <Route path="/item/:instrumentoID" element={<ItemDetailContainer />} />
+    </Routes>
+    </BrowserRouter>
   </>
   )
 }

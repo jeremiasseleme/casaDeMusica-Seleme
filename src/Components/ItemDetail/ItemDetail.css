@@ -1,0 +1,16 @@
+.containerDetail{
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 2px black solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerDetail img{
+ width: 700px;
+ height: 700px;
+ overflow: hidden;
+}
