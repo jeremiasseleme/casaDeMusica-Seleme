@@ -20,8 +20,8 @@ export default function Item({id, price, title, pictureUrl}) {
                     <span className="precio2"><b>Precio: ${price}</b></span>
                 </div>
             </div>
-            <Link to={`/item/${id}`}>
-            <button className="btnDetalles btn-primary mx-auto">Detalles🔍</button>
+            <Link to={`/item/${id}`} className="text-decoration-none">
+            <button className="btnDetalles">Detalles🔍</button>
             </Link>
         </div>
     )
