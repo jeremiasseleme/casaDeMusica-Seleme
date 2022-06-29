@@ -6,3 +6,18 @@
     color: white;
     border: none;
   }
+
+  .dropDown li {
+    color: fuchsia;
+  }
+
+  .navBar li {
+    color: fuchsia;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem;
+  }
+
+  .navBar a{
+    color: fuchsia;
+  }

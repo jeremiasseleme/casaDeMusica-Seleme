@@ -24,7 +24,7 @@ export default function ItemDetail({ instrumento }) {
                             <span className="precio2Detail"><b>Precio: ${instrumento.price}</b></span>
                         </div>
                     </div>
-                    <ItemCount stock={5} initial={1} onAdd={onAdd} />
+                    <ItemCount stock={instrumento.stock} initial={1} onAdd={onAdd} />
                 </div>
             </div>
         </>
