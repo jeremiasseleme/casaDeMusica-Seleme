@@ -1,8 +1,8 @@
 .containerDetail{
     width: 80%;
     margin: 0 auto;
+    border: 2px solid black;
     padding: 1rem;
-    border: 2px black solid;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -13,4 +13,37 @@
  width: 700px;
  height: 700px;
  overflow: hidden;
+}
+
+.infoDetail {
+    text-align: center;
+    color: white;
+    width: 450px;
+}
+
+.Detail {
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 2px fuchsia solid;
+    padding: 2rem;
+    margin: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_precioDetail {
+    letter-spacing: 4px;
+    margin: 1rem;
+    font-size: 20px;
+    background-color: rgb(253, 45, 45);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btnComprar {
+    width: 300px;
 }

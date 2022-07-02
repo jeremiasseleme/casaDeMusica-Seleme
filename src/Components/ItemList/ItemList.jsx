@@ -4,7 +4,7 @@ import "./ItemList.css"
 
 export default function ItemList({listaProductos}) {
   return (
-    <div className="container">
+    <div className="containerr">
       {
         listaProductos.map((item) => <Item key={item.id} id={item.id} stock={item.stock} price={item.price} title={item.title} pictureUrl={item.pictureUrl} />
         )

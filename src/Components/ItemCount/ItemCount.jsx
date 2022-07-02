@@ -21,10 +21,10 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
   return (
     <div className="bg-dark contador">
-        <div><button className="btn-light" onClick={() => restar()}>-</button></div>
+        <div><button className="btn btn-light" onClick={() => restar()}>-</button></div>
         <div className="text-light num">{auxInitial}</div>
-        <div><button className="btnSumar btn-light" onClick={() => sumar()}>+</button></div>
-        <button className="btn-success" onClick={() => onAdd(auxInitial) }>Agregar al carrito</button>
+        <div><button className="btn btnSumar btn-light" onClick={() => sumar()}>+</button></div>
+        <button className="btn btn-success" onClick={() => onAdd(auxInitial) }>Agregar al carrito</button>
     </div>
   )
 }
