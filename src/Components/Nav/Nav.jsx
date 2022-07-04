@@ -9,7 +9,7 @@ import Slider from '../Slider/Slider';
 export default function Nav() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg mb-4">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <Link to="/" className="text-decoration-none nav-link"><img className="img_logo"
             src="https://lacasadelmusico.com.ar/wp-content/uploads/2020/09/logo_final-e1599774278834.png"
