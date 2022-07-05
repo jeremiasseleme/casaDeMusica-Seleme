@@ -4,7 +4,6 @@ import CartWidget from '../CartWidget/CartWidget'
 import "./Nav.css";
 import { Link } from 'react-router-dom';
 import Buscador from '../Buscador/Buscador';
-import Slider from '../Slider/Slider';
 
 export default function Nav() {
   return (
@@ -39,7 +38,6 @@ export default function Nav() {
           </div>
         </div>
       </nav>
-      <Slider />
     </>
   )
 }

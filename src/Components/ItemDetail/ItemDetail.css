@@ -1,6 +1,7 @@
 .containerDetail{
     width: 80%;
     margin: 0 auto;
+    margin-top: 1rem;
     border: 2px solid black;
     padding: 1rem;
     border-radius: 10px;

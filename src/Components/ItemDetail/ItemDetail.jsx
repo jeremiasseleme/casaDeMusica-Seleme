@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css"
 
 export default function ItemDetail({ instrumento }) {
+
+
+    const [cantidad, setCantidad] = useState();
+
     function onAdd(valor) {
         alert("Usted agrego " + valor + " " + instrumento.title + " al carrito de compras!")
+        setCantidad(valor)
     }
 
     return (
