@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css"
+import { CartContext } from '../CartContext/CartContext';
+import { useContext } from 'react';
 
 export default function ItemDetail({ instrumento }) {
 
+    const { addItem, removeItem, clear, isInCart } = useContext(CartContext);
 
     const [cantidad, setCantidad] = useState();
 
