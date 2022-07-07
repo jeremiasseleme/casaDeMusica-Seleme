@@ -14,6 +14,7 @@ export default function ItemDetail({ instrumento }) {
     function onAdd(valor) {
         alert("Usted agrego " + valor + " " + instrumento.title + " al carrito de compras!")
         setCantidad(valor)
+        addItem(instrumento, valor);
     }
 
     return (
