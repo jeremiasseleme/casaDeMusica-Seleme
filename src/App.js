@@ -4,7 +4,7 @@ import Nav from './Components/Nav/Nav';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Footer from './Components/Footer/Footer';
-import { CartContext } from './Components/CartContext/CartContext';
+import CartContext from './Components/CartContext/CartContext';
 
 function App() {
 

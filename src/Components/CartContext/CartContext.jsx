@@ -1,11 +1,16 @@
 import React from 'react'
+import { useState } from 'react';
 import { createContext } from 'react'
 
-export const CartContext = createContext(null);
+export const myCartContext = createContext(null);
 
-export default function CartContext({ children }) {
+export default function CartProvider({ children }) {
 
-function addItem(item,cantidad){
+    const {cart, SetCart} = useState([])
+
+function addItem(item, cantidad){
+    cart.push(...item, cantidad)
+
 
 }
 
@@ -23,9 +28,9 @@ function isInCart(id){
 
     return (
         <>
-            <CartContext.Provider value={{addItem, removeItem, clear, isInCart}}>
+            <myCartContext.Provider value={{addItem, removeItem, clear, isInCart}}>
                 {children}
-            </CartContext.Provider>
+            </myCartContext.Provider>
         </>
     )
 }
