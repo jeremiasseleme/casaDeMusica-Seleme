@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css"
-import { myCartContext } from '../CartContext/CartContext';
+import { myCartContext } from '../../Contexts/CartContext/CartContext';
 import { useContext } from 'react';
 
 export default function ItemDetail({ instrumento }) {
@@ -35,7 +35,7 @@ export default function ItemDetail({ instrumento }) {
                             <span className="precio2Detail"><b>${instrumento.price}</b></span>
                         </div>
                     </div>
-                    <Link to="/cart"><button className="btnComprar btn btn-primary">Comprar ahora</button></Link>
+                    <Link to="/cart"><button className="btnComprar btn btn-warning">Comprar ahora</button></Link>
                     <ItemCount stock={instrumento.stock} initial={1} onAdd={onAdd} />
                 </div>
             </div>
