@@ -10,24 +10,37 @@ export default function CartProvider({ children }) {
     const [cantidad, setCantidad] = useState(0)
 
 function addItem(item, cantidadItems){
+
     setCantidad(cantidad + cantidadItems)
+    setCart([...cart, {...item, cantidad: cantidadItems}])
+    if(isInCart(item.id)){
+        let nuevoCart = cart; 
+        let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id == item.id); 
+        nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidad);  
+        setCart([...nuevoCart]); 
+        
+      }else{
+        setCart([...cart, {...item, cantidad:cantidad }])
+      }
 }
 
 function removeItem(itemID){
-    cart.find((instrumento) => instrumento.id === itemID) && this.remove()
+    const cartCopy = cart.filter((instrumento) => instrumento.id !== itemID)
+    setCart(cartCopy)
 }
 
 function clear(){
     setCart([])
 }
 
-function isInCart(id){
-//  return i | -1
+function isInCart(id) {
+    cart.find( item => item.id === id)
 }
+
 
     return (
         <>
-            <myCartContext.Provider value={{addItem, removeItem, clear, isInCart, cantidad}}>
+            <myCartContext.Provider value={{addItem, removeItem, clear, cantidad}}>
                 {children}
             </myCartContext.Provider>
         </>

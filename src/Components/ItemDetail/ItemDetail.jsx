@@ -7,7 +7,7 @@ import { useContext } from 'react';
 
 export default function ItemDetail({ instrumento }) {
 
-    const { addItem, removeItem, clear, isInCart } = useContext(myCartContext);
+    const { addItem } = useContext(myCartContext);
 
     const [cantidad, setCantidad] = useState();
 
@@ -32,10 +32,10 @@ export default function ItemDetail({ instrumento }) {
                     </div>
                     <div className="precioDetail">
                         <div className="box_precioDetail">
-                            <span className="precio2Detail"><b>${instrumento.price}</b></span>
+                            <span className="precio2Detail">${instrumento.price}</span>
                         </div>
                     </div>
-                    <Link to="/cart"><button className="btnComprar btn btn-warning">Comprar ahora</button></Link>
+                    <Link to="/cart"><button className="btnComprar btn btn-primary">Comprar ahora</button></Link>
                     <ItemCount stock={instrumento.stock} initial={1} onAdd={onAdd} />
                 </div>
             </div>

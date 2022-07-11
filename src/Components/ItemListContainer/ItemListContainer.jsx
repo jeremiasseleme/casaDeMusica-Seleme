@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemList from '../ItemList/ItemList';
 import "./ItemListContainer.css"
+import {doc, getDoc, getFirestore} from 'firebase/firestore'
+
 
 export default function ItemListContainer() {
 
