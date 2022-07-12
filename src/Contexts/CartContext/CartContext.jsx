@@ -2,26 +2,26 @@ import React from 'react'
 import { useState } from 'react';
 import { createContext } from 'react'
 
-export const myCartContext = createContext(null);
+export const myCartContext = createContext();
 
 export default function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
     const [cantidad, setCantidad] = useState(0)
-
+    
 function addItem(item, cantidadItems){
 
-    setCantidad(cantidad + cantidadItems)
     setCart([...cart, {...item, cantidad: cantidadItems}])
     if(isInCart(item.id)){
         let nuevoCart = cart; 
-        let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id == item.id); 
+        let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id === item.id); 
         nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidad);  
         setCart([...nuevoCart]); 
         
-      }else{
+    }else{
         setCart([...cart, {...item, cantidad:cantidad }])
-      }
+    }
+    setCantidad(cantidad + cantidadItems)
 }
 
 function removeItem(itemID){
@@ -40,7 +40,7 @@ function isInCart(id) {
 
     return (
         <>
-            <myCartContext.Provider value={{addItem, removeItem, clear, cantidad}}>
+            <myCartContext.Provider value={{cart, addItem, removeItem, clear, cantidad}}>
                 {children}
             </myCartContext.Provider>
         </>
