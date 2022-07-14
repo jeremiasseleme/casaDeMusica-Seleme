@@ -11,22 +11,23 @@ export default function CartProvider({ children }) {
     
 function addItem(item, cantidadItems){
 
-    setCart([...cart, {...item, cantidad: cantidadItems}])
+    // setCart([...cart, {...item, cantidad: cantidadItems}])
     if(isInCart(item.id)){
         let nuevoCart = cart; 
         let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id === item.id); 
-        nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidad);  
+        nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidadItems);
         setCart([...nuevoCart]); 
         
     }else{
-        setCart([...cart, {...item, cantidad:cantidad }])
+        setCart([...cart, {...item, cantidad:cantidadItems }])
     }
     setCantidad(cantidad + cantidadItems)
 }
 
 function removeItem(itemID){
-    const cartCopy = cart.filter((instrumento) => instrumento.id !== itemID)
-    setCart(cartCopy)
+    const removedItem = cart.find((instrumento) => instrumento.id === itemID)
+    setCart(cart.filter((instrumento) => instrumento.id !== itemID))
+    setCantidad(cantidad - removedItem.cantidad)
 }
 
 function clear(){
@@ -34,7 +35,7 @@ function clear(){
 }
 
 function isInCart(id) {
-    cart.find( item => item.id === id)
+    return cart.find( item => item.id === id)
 }
 
 

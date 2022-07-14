@@ -2,10 +2,11 @@
     width: 80%;
     margin: 0 auto;
     margin-top: 1rem;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     padding: 1rem;
     border-radius: 10px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -19,11 +20,11 @@
 .infoDetail {
     text-align: center;
     color: white;
-    width: 450px;
+    max-width: 450px;
 }
 
 .Detail {
-    height: 70vh;
+    height: 80vh;
     background-color: rgba(0, 0, 0, 0.95);
     border: 2px fuchsia solid;
     padding: 2rem;

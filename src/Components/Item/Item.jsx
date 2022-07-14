@@ -14,7 +14,6 @@ export default function Item({ id, stock, price, title, pictureUrl }) {
                 </div>
                 <div className="info">
                     <h2>{title}</h2>
-                    <p className="infop">id:{id}</p>
                 </div>
                 <div className="precio">
                     <div className="box_precio">

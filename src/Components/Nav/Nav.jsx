@@ -19,7 +19,6 @@ export default function Nav() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 navBar">
               <Link to="/" className="text-decoration-none nav-link"><li className="nav-item">Inicio</li></Link>
-              <Link to="/contacto" className="text-decoration-none nav-link"><li className="nav-item">Contacto</li></Link>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
