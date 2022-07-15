@@ -11,7 +11,6 @@ export default function CartProvider({ children }) {
     
 function addItem(item, cantidadItems){
 
-    // setCart([...cart, {...item, cantidad: cantidadItems}])
     if(isInCart(item.id)){
         let nuevoCart = cart; 
         let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id === item.id); 
