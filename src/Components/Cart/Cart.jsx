@@ -21,8 +21,8 @@ export default function Cart() {
                 :
                 <>
                     {cart.map((item, i) => <ItemCart item={item} key={item.id + i} />)}
-                    <button className="btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
-                    <Link to="/checkout"><button className="btn btn-primary">Terminar compra</button></Link>
+                    <button className="mx-auto btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
+                    <Link to="/checkout"><button className="mx-auto btn btn-primary">Terminar compra</button></Link>
                 </>
             }
         </>

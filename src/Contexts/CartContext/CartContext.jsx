@@ -7,21 +7,23 @@ export const myCartContext = createContext();
 
 export default function CartProvider({ children }) {
 
-    const [cart, setCart] = useState([])
-    const [cantidad, setCantidad] = useState([])
-    // (() => {
-    //     const instrumentosStorage = localStorage.getItem("cart")
+    const [cantidad, setCantidad] = useState(0)
 
-    //     try{
-    //         return instrumentosStorage ? JSON.parse(instrumentosStorage) : []
-    //     } catch(error){
-    //         console.log(error)
-    //     }
-    // })
+    const [cart, setCart] = useState(() => {
 
-    // useEffect(() => {
-    //     localStorage.setItem("cart", JSON.stringify(cart))
-    // }, [cart])
+        const instrumentosStorage = localStorage.getItem("cart")
+
+        try{
+            return instrumentosStorage ? JSON.parse(instrumentosStorage) : []
+        } catch(error){
+            console.log("error", error)
+        }
+    })
+    
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
     
     
 function addItem(item, cantidadItems){
