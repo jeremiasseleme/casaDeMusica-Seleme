@@ -12,7 +12,7 @@ export default function ItemListContainer() {
   const { categoryID } = useParams()
 
   useEffect(() => {
-
+    
     const db = getFirestore();
     const instrumentosRef = collection(db, "Instrumentos")
 

@@ -1,0 +1,17 @@
+.carroVacio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.containerrr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px fuchsia;
+}
+
+.containerrr img {
+    width: 100px;
+}

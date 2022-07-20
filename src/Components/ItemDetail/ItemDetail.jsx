@@ -4,6 +4,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import "./ItemDetail.css"
 import { myCartContext } from '../../Contexts/CartContext/CartContext';
 import { useContext } from 'react';
+import Toastify from 'toastify-js'
 
 export default function ItemDetail({ instrumento }) {
 
@@ -12,7 +13,19 @@ export default function ItemDetail({ instrumento }) {
     const [cantidad, setCantidad] = useState();
 
     function onAdd(valor) {
-        alert("Usted agrego " + valor + " " + instrumento.title + " al carrito de compras!")
+        Toastify({
+            text: "Usted agrego " + valor + " " + instrumento.title + " al carrito de compras!",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "fuchsia",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
         setCantidad(valor)
         addItem(instrumento, valor);
     }

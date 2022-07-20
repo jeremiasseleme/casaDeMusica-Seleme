@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import { myCartContext } from '../../Contexts/CartContext/CartContext';
+import "./Cart.css"
 
 export default function ItemCart({item}) {
 
   const { removeItem } = useContext(myCartContext);
 
   return (
-    <div className="container">
+    <div className="containerrr">
        <img src={item.pictureUrl} alt={item.title} />
-       <div> {item.title} cantidad {item.cantidad}</div>
-       <button onClick={() => removeItem(item.id)}>Eliminame</button>
+       <div className="p-5"> <span className="p-4">{item.title}</span>   <b>Cantidad: {item.cantidad}</b></div>
+       <button className="btn btn-danger" onClick={() => removeItem(item.id)}>Eliminame</button>
     </div>
   )
 }

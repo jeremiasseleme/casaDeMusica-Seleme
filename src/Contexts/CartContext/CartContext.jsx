@@ -1,13 +1,28 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createContext } from 'react'
+import Toastify from 'toastify-js';
 
 export const myCartContext = createContext();
 
 export default function CartProvider({ children }) {
 
     const [cart, setCart] = useState([])
-    const [cantidad, setCantidad] = useState(0)
+    const [cantidad, setCantidad] = useState([])
+    // (() => {
+    //     const instrumentosStorage = localStorage.getItem("cart")
+
+    //     try{
+    //         return instrumentosStorage ? JSON.parse(instrumentosStorage) : []
+    //     } catch(error){
+    //         console.log(error)
+    //     }
+    // })
+
+    // useEffect(() => {
+    //     localStorage.setItem("cart", JSON.stringify(cart))
+    // }, [cart])
+    
     
 function addItem(item, cantidadItems){
 
@@ -16,21 +31,47 @@ function addItem(item, cantidadItems){
         let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id === item.id); 
         nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidadItems);
         setCart([...nuevoCart]); 
-        
     }else{
-        setCart([...cart, {...item, cantidad:cantidadItems }])
+        setCart([...cart, {...item, cantidad:cantidadItems }],)
     }
     setCantidad(cantidad + cantidadItems)
 }
 
 function removeItem(itemID){
     const removedItem = cart.find((instrumento) => instrumento.id === itemID)
-    setCart(cart.filter((instrumento) => instrumento.id !== itemID))
+    setCart(cart.filter((instrumento) => instrumento.id !== itemID),)
     setCantidad(cantidad - removedItem.cantidad)
+    Toastify({
+        text: "Se elimino " + removedItem.title + " del carrito de compras!",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "center", 
+        stopOnFocus: true, 
+        style: {
+          background: "red",
+        },
+        onClick: function(){} 
+      }).showToast();
 }
 
 function clear(){
-    setCart([])
+    setCart([],)
+    setCantidad(0)
+    Toastify({
+        text: "Usted ha vaciado su carrito de compras!",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "center", 
+        stopOnFocus: true, 
+        style: {
+          background: "red",
+        },
+        onClick: function(){} 
+      }).showToast();
 }
 
 function isInCart(id) {
