@@ -10,6 +10,7 @@ export default function ItemCart({item}) {
     <div className="containerrr">
        <img src={item.pictureUrl} alt={item.title} />
        <div className="p-5"> <span className="p-4">{item.title}</span>   <b>Cantidad: {item.cantidad}</b></div>
+       <h6 className="p-5 text-center">Subtotal: ${item.price * item.cantidad}</h6>
        <button className="btn btn-danger" onClick={() => removeItem(item.id)}>Eliminame</button>
     </div>
   )

@@ -9,20 +9,17 @@ export default function CartProvider({ children }) {
 
     const [cantidad, setCantidad] = useState(0)
 
-    const [cart, setCart] = useState(() => {
+    const [totalCompra, setTotalCompra] = useState(0)
 
-        const instrumentosStorage = localStorage.getItem("cart")
-
-        try{
-            return instrumentosStorage ? JSON.parse(instrumentosStorage) : []
-        } catch(error){
-            console.log("error", error)
-        }
-    })
-    
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || [])
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
+
+        setCantidad(cart.reduce((previous,current) => previous + current.cantidad, 0)     
+        ); 
+        const total = cart.reduce((previous,current) => previous + current.cantidad * current.price, 0)
+        setTotalCompra(total)
     }, [cart])
     
     
@@ -36,13 +33,13 @@ function addItem(item, cantidadItems){
     }else{
         setCart([...cart, {...item, cantidad:cantidadItems }],)
     }
-    setCantidad(cantidad + cantidadItems)
+    // setCantidad(cantidad + cantidadItems)
 }
 
 function removeItem(itemID){
     const removedItem = cart.find((instrumento) => instrumento.id === itemID)
     setCart(cart.filter((instrumento) => instrumento.id !== itemID),)
-    setCantidad(cantidad - removedItem.cantidad)
+    // setCantidad(cantidad - removedItem.cantidad)
     Toastify({
         text: "Se elimino " + removedItem.title + " del carrito de compras!",
         duration: 3000,
@@ -60,7 +57,7 @@ function removeItem(itemID){
 
 function clear(){
     setCart([],)
-    setCantidad(0)
+    // setCantidad(0)
     Toastify({
         text: "Usted ha vaciado su carrito de compras!",
         duration: 3000,
@@ -83,7 +80,7 @@ function isInCart(id) {
 
     return (
         <>
-            <myCartContext.Provider value={{cart, addItem, removeItem, clear, cantidad}}>
+            <myCartContext.Provider value={{cart, addItem, removeItem, clear, cantidad, totalCompra}}>
                 {children}
             </myCartContext.Provider>
         </>

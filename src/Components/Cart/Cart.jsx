@@ -7,7 +7,7 @@ import "./Cart.css"
 
 export default function Cart() {
 
-    const { cart, clear } = useContext(myCartContext);
+    const { cart, clear, totalCompra } = useContext(myCartContext);
 
     return (
         <>
@@ -21,8 +21,11 @@ export default function Cart() {
                 :
                 <>
                     {cart.map((item, i) => <ItemCart item={item} key={item.id + i} />)}
-                    <button className="mx-auto btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
-                    <Link to="/checkout"><button className="mx-auto btn btn-primary">Terminar compra</button></Link>
+                    <div className="container">
+                    <h3 className="m-4">Total de su compra: ${totalCompra}</h3>
+                    <button className="m-4 btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
+                    <Link to="/checkout"><button className="m-4 mx-auto btn btn-primary">Terminar compra</button></Link>
+                    </div>
                 </>
             }
         </>
