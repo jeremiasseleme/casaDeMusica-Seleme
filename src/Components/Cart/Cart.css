@@ -6,6 +6,8 @@
 }
 
 .containerrr{
+    width: 90%;
+    margin: 0.5rem auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -15,4 +17,12 @@
 
 .containerrr img {
     width: 100px;
+}
+
+@media(max-width:469px){
+    .containerrr{
+        width: 95%;
+        flex-direction: column;
+    }
+    
 }

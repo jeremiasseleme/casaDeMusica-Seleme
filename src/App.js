@@ -7,7 +7,7 @@ import Footer from './Components/Footer/Footer';
 import CartContext from './Contexts/CartContext/CartContext';
 import Cart from './Components/Cart/Cart';
 import React from 'react';
-import Checkout from './Components/Checkout/Checkout';
+import CheckoutCopy from './Components/Checkout/CheckoutCopy';
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
     <Route path="/category/:categoryID" element={<ItemListContainer />} />
     <Route path="/item/:instrumentoID" element={<ItemDetailContainer />} />
     <Route path="/cart" element={<Cart />} />
-    <Route path="/checkout" element={<Checkout/>} />
+    <Route path="/checkout" element={<CheckoutCopy/>} />
     </Routes>
     <Footer/>
     </BrowserRouter>

@@ -22,9 +22,9 @@ export default function Cart() {
                 <>
                     {cart.map((item, i) => <ItemCart item={item} key={item.id + i} />)}
                     <div className="container">
-                    <h3 className="m-4">Total de su compra: ${totalCompra}</h3>
-                    <button className="m-4 btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
-                    <Link to="/checkout"><button className="m-4 mx-auto btn btn-primary">Terminar compra</button></Link>
+                    <h3 className="m-3">Total de su compra: ${totalCompra}</h3>
+                    <button className="m-3 btn btn-primary" onClick={() => clear()}>Limpiar Carrito</button>
+                    <Link to="/checkout"><button className="m-3 mx-auto btn btn-primary">Terminar compra</button></Link>
                     </div>
                 </>
             }

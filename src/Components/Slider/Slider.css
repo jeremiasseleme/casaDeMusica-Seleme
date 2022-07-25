@@ -5,3 +5,9 @@
     margin: 1rem auto;
     border-radius: 10px;
 }
+
+@media(max-width:469px){
+    .slider{
+       height: 5rem;
+    }
+}

@@ -38,18 +38,23 @@ export default function ItemDetail({ instrumento }) {
             </div>
             <div className="Detail">
                 <div className="infoDetail">
-                    <h2 className="mb-4 mt-5">{instrumento.title}</h2>
-                    <p>Stock: {instrumento.stock} ID: {instrumento.id}</p>
-                    <p className="infopDetail"><b>Detalle: </b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eius optio similique, porro possimus ab. Tenetur atque voluptas amet reprehenderit nemo possimus, aut deleniti nisi laborum vel deserunt recusandae velit, dolorem iste, quod cupiditate obcaecati sed ratione quia fuga pariatur. Ipsum, veritatis cum? Modi hic iure ducimus. Corporis sequi nihil magni, libero aspernatur, doloribus repudiandae nam, tempora sapiente provident reprehenderit?</p>
+                    <h2 className="mb-4 mt-3">{instrumento.title}</h2>
+                    <p>Stock: {instrumento.stock}</p>
+                    <p className="infopDetail"><b>Detalle: </b>{instrumento.description}</p>
                 </div>
                 <div className="precioDetail">
                     <div className="box_precioDetail">
                         <span className="precio2Detail">${instrumento.price}</span>
                     </div>
                 </div>
+                {!cantidad > 0 &&
                 <ItemCount stock={instrumento.stock} initial={1} onAdd={onAdd} />
+            }
                 {cantidad > 0 &&
-                    <Link to="/cart"><button className="btnComprar btn btn-primary">Terminar compra</button></Link>
+                <>
+                <Link to="/"><button className="btnComprar btn btn-primary">Seguir Comprando</button></Link>
+                    <Link to="/cart"><button className="mt-2 btnComprar btn btn-primary">Terminar compra</button></Link>
+                    </>
                 }
             </div>
         </div>

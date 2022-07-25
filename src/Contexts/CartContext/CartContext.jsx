@@ -16,27 +16,26 @@ export default function CartProvider({ children }) {
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
 
-        setCantidad(cart.reduce((previous,current) => previous + current.cantidad, 0)     
-        ); 
-        const total = cart.reduce((previous,current) => previous + current.cantidad * current.price, 0)
+        setCantidad(cart.reduce((previous, current) => previous + current.cantidad, 0)
+        );
+        const total = cart.reduce((previous, current) => previous + current.cantidad * current.price, 0)
         setTotalCompra(total)
     }, [cart])
-    
-    
-function addItem(item, cantidadItems){
 
+
+    function addItem(item, cantidadItems) {
+     
     if(isInCart(item.id)){
-        let nuevoCart = cart; 
-        let indexProducto = nuevoCart.findIndex(instrumento=> instrumento.id === item.id); 
-        nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidadItems);
-        setCart([...nuevoCart]); 
-    }else{
-        setCart([...cart, {...item, cantidad:cantidadItems }],)
-    }
-    // setCantidad(cantidad + cantidadItems)
-}
+            let nuevoCart = cart;
+            let indexProducto = nuevoCart.findIndex(instrumento => instrumento.id === item.id);
+            nuevoCart[indexProducto].cantidad = Number(nuevoCart[indexProducto].cantidad) + Number(cantidadItems);
+            setCart([...nuevoCart]);
+        }else {
+            setCart([...cart, { ...item, cantidad: cantidadItems }],)
+        }
+    } 
 
-function removeItem(itemID){
+function removeItem(itemID) {
     const removedItem = cart.find((instrumento) => instrumento.id === itemID)
     setCart(cart.filter((instrumento) => instrumento.id !== itemID),)
     // setCantidad(cantidad - removedItem.cantidad)
@@ -45,17 +44,17 @@ function removeItem(itemID){
         duration: 3000,
         newWindow: true,
         close: true,
-        gravity: "top", 
-        position: "center", 
-        stopOnFocus: true, 
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
         style: {
-          background: "red",
+            background: "red",
         },
-        onClick: function(){} 
-      }).showToast();
+        onClick: function () { }
+    }).showToast();
 }
 
-function clear(){
+function clear() {
     setCart([],)
     // setCantidad(0)
     Toastify({
@@ -63,26 +62,26 @@ function clear(){
         duration: 3000,
         newWindow: true,
         close: true,
-        gravity: "top", 
-        position: "center", 
-        stopOnFocus: true, 
+        gravity: "top",
+        position: "center",
+        stopOnFocus: true,
         style: {
-          background: "red",
+            background: "red",
         },
-        onClick: function(){} 
-      }).showToast();
+        onClick: function () { }
+    }).showToast();
 }
 
 function isInCart(id) {
-    return cart.find( item => item.id === id)
+    return cart.find(item => item.id === id)
 }
 
 
-    return (
-        <>
-            <myCartContext.Provider value={{cart, addItem, removeItem, clear, cantidad, totalCompra}}>
-                {children}
-            </myCartContext.Provider>
-        </>
-    )
+return (
+    <>
+        <myCartContext.Provider value={{ cart, addItem, removeItem, clear, cantidad, totalCompra }}>
+            {children}
+        </myCartContext.Provider>
+    </>
+)
 }

@@ -11,3 +11,13 @@
   .footer p{
     color: white;
   }
+
+  @media(max-width:469px){
+    .footer{
+      flex-direction: column;
+    }
+    .footer p{
+      max-width: 300px;
+      text-align: center;
+    }
+}

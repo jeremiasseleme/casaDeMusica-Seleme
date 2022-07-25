@@ -12,9 +12,9 @@
 }
 
 .containerDetail img{
- width: 700px;
- height: 700px;
- overflow: hidden;
+width: 100%;
+ max-width: 700px;
+ max-height: 700px;
 }
 
 .infoDetail {
@@ -24,7 +24,7 @@
 }
 
 .Detail {
-    height: 80vh;
+    height: auto;
     background-color: rgba(0, 0, 0, 0.95);
     border: 2px fuchsia solid;
     padding: 2rem;
@@ -49,4 +49,15 @@
 
 .btnComprar {
     width: 300px;
+}
+
+@media(max-width:469px){
+    .infoDetail {
+        text-align: center;
+        color: white;
+        max-width: 300px;
+    }
+    .btnComprar {
+        width: 250px;
+    }
 }
