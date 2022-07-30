@@ -21,7 +21,6 @@ export default function Item({ id, stock, price, title, pictureUrl }) {
                     </div>
                 </div>
                 <p>Stock: {stock}</p>
-                {/* <button className="btnDetalles">Detalles🔍</button> */}
         </Link>
             </div>
     )

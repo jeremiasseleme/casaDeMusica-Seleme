@@ -4,8 +4,6 @@ import "./ItemCount.css";
 
 export default function ItemCount({stock, initial, onAdd}) {
 
-    // let auxInitial = initial;
-
     const [auxInitial, setAuxInitial] = useState(initial);
 
     function restar() {
