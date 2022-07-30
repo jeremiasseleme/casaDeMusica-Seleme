@@ -6,8 +6,8 @@ export default function Item({ id, stock, price, title, pictureUrl }) {
 
 
     return (
-        <div className="cont_productos ">
-                <Link to={`/item/${id}`} className="text-decoration-none">
+        <div className="cont_productos">
+            <Link to={`/item/${id}`} className="text-decoration-none text-dark">
                 <div className="card">
                     <img src={pictureUrl}
                         alt={title} />

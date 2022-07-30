@@ -18,17 +18,18 @@ export default function ItemDetail({ instrumento }) {
             duration: 3000,
             newWindow: true,
             close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "center", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
+            gravity: "top", 
+            position: "center", 
+            stopOnFocus: true, 
             style: {
               background: "fuchsia",
             },
-            onClick: function(){} // Callback after click
+            onClick: function(){} 
           }).showToast();
         setCantidad(valor)
-        addItem(instrumento, valor);
+        addItem(instrumento, valor)
     }
+
 
     return (
         <div className="containerDetail">

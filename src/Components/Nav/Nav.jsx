@@ -3,7 +3,6 @@ import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import "./Nav.css";
 import { Link } from 'react-router-dom';
-import Buscador from '../Buscador/Buscador';
 
 export default function Nav() {
   return (
@@ -32,7 +31,6 @@ export default function Nav() {
                 </ul>
               </li>
             </ul>
-            <Buscador />
             <CartWidget />
           </div>
         </div>

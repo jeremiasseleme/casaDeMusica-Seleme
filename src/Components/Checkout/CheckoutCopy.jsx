@@ -11,10 +11,6 @@ export default function Checkout() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = evento => {
-    console.log(evento);
-  }
-
   const [fname, setFname] = useState("")
   const [sname, setSname] = useState("")
   const [email, setEmail] = useState("")
@@ -70,7 +66,7 @@ export default function Checkout() {
                   message: "El email no es valido"
                 }
               })}
-                onChange={(e) => setEmail(e.target.value)} id="email" name="email" type="text" placeholder="Email" className="form-control" />
+                onChange={(e) => setEmail(e.target.value)} id="email" name="email" type="text" placeholder="ejemplo@gmail.com" className="form-control" />
               {errors.email && <span className="text-danger">{errors.email.message}</span>}
 
               <input {...register("phone", {
@@ -83,7 +79,7 @@ export default function Checkout() {
                   message: "El telefono no es valido"
                 }
               })}
-                onChange={(e) => setPhone(e.target.value)} id="phone" name="phone" type="text" placeholder="Telefono" className="form-control" />
+                onChange={(e) => setPhone(e.target.value)} id="phone" name="phone" type="text" placeholder="0114707839" className="form-control" />
               {errors.phone && <span className="text-danger">{errors.phone.message}</span>}
               <textarea onChange={(e) => setMsg(e.target.value)} className="form-control" id="message" name="message" placeholder="Aclaraciones o comentarios" rows="5"></textarea>
               {!idCompra &&
